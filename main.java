@@ -12,12 +12,27 @@
 // "User entered no"
 //
 // (TO COMPLETE)
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-      System.out.println("Hello World!");
+      Scanner sc = new Scanner(System.in);
 
+      System.out.println("\nPlease enter yes or no: ");
+      String user_input = sc.nextLine();
 
+      // input validation
+      while (!user_input.equalsIgnoreCase("yes") && !user_input.equalsIgnoreCase("no")) {
+        System.out.print("Error -> Please enter either yes or no -> Reenter: ");
+        user_input = sc.nextLine();
+      }
+
+      // Finds if user entered yes or no
+      if (user_input.equalsIgnoreCase("yes")) {
+        System.out.print("User entered yes");
+      } else if (user_input.equalsIgnoreCase("no")) {
+        System.out.print("User entered no");
+      }
+      System.out.println();
     }
-
 }
